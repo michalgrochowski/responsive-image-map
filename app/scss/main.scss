@@ -11,38 +11,6 @@ body {
     font-size: 1.6rem;
     color: #333;
 }
-// Header and nav
-.header {
-    
-}
-.nav {
-    @include flex-row;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.nav__logo {
-    align-self: flex-start;
-}
-.nav__list {
-    @include flex-row;
-    justify-content: flex-end;
-    width: 100%;
-}
-.nav__item {
-    font-size: 1.8rem;
-    margin: 1rem 1.5rem 1rem 1.5rem;
-    display: block;
-}
-.nav__item:last-of-type {
-    margin-right: 3rem;
-}
-.nav__link {
-    color: #ffffff;
-    text-decoration: none;
-}
 // Main layout
 .container {
     @include flex-center-column;
@@ -66,7 +34,11 @@ body {
     flex-basis: 100%;
     text-align: center;
 }
-
+// Image map
+.mapped-image {
+    width: 1200px;
+    height: 376px;
+}
 // Misc items
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #ffffff;
