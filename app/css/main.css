@@ -47,7 +47,7 @@ body {
   flex-wrap: wrap; }
   @media screen and (min-width: 1201px) {
     .section {
-      width: 117rem; } }
+      width: 120rem; } }
   @media screen and (max-width: 1200px) {
     .section {
       width: 100%; } }
@@ -58,8 +58,8 @@ body {
   text-align: center; }
 
 .mapped-image {
-  width: 1200px;
-  height: 376px; }
+  width: 100%;
+  height: auto; }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */

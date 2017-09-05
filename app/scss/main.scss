@@ -24,7 +24,7 @@ body {
     @include flex-center-row;
     flex-wrap: wrap;
     @include mq-min(1201px) {
-        width: 117rem;
+        width: 120rem;
     }
     @include mq-max(1200px) {
         width: 100%;
@@ -36,8 +36,12 @@ body {
 }
 // Image map
 .mapped-image {
-    width: 1200px;
-    height: 376px;
+    width: 100%;
+    height: auto;
+}
+// Footer
+.footer {
+    
 }
 // Misc items
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
