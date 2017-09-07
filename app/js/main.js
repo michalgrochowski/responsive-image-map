@@ -7,10 +7,12 @@ $(document).ready(function() {
         strokeWidth: 4,
         stroke: true,
         staticState: true,
+        mouseoutDelay: 200,
         render_highlight: {
             fillColor: '333333',
             fillOpacity: 0.5,
-            stroke: true
+            stroke: true,
+            fade: true
         },
         areas: [
         {
@@ -56,3 +58,42 @@ $(document).ready(function() {
     ],
     });
 });
+
+var time = 300;     
+var resizeDelay = 100;   
+var savedWidth = $('#apart').width();
+var savedHeigth = $('#apart').height(); 
+var savedWindowWidth = $(window).width();
+var savedWindowHeight = $(window).height();
+function resize(newWinWidth, newWinHeight) {          
+    var newImgWidth = 0;
+    var newImgHeight = 0;
+    newImgWidth = (newWinWidth * savedWidth) / savedWindowWidth;  
+    if($(window).height< savedWindowHeight){
+        newImgHeight = (newWinHeight * savedHeigth) / savedWindowHeight;
+    }
+    if (savedWindowWidth === $(window).width()) {
+        $('#apart').mapster('resize', savedWidth, savedHeigth, time);
+    } else {
+        $('#apart').mapster('resize', newImgWidth, newImgHeight, time);
+    }
+};
+function onWindowResize() {
+    var curWidth = $(window).width(),
+    curHeight = $(window).height(),
+    checking = false;
+    if (checking) {
+        return;
+    }
+    checking = true;
+    window.setTimeout(function () {
+        var newWidth = $(window).width(),
+        newHeight = $(window).height();
+        if (newWidth === curWidth && newHeight === curHeight) {
+            resize(newWidth, newHeight);
+        }
+        checking = false;
+    }, resizeDelay);
+}
+
+$(window).bind('resize', onWindowResize);
